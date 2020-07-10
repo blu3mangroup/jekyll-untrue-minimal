@@ -1,0 +1,73 @@
+---
+layout: default
+---
+
+{% assign shortnonempty = 0 %}
+{% assign longnonempty = 0 %}
+
+<div class=over>
+
+    <p style="text-align:center">#{{page.tag}}</p>
+    <br>
+</div>
+
+<div class=over>
+<p>Short Posts:</p>
+<ul>
+<div class="split left">
+    {% for post in site.categories.short %}
+        {% if post.tags contains page.tag %}
+      <li>
+        {% assign date_print = post.date | date: "%d %b" %}
+        {{ date_print | strip_newlines}}
+      </li>
+          {% assign shortnonempty = 1 %}
+      {% endif %}
+    {% endfor %}
+</div>
+<div class="split right">
+      {% for post in site.categories.short %}
+        {% if post.tags contains page.tag %}
+      <li>
+        <a href="{{site.baseurl}}{{ post.url }}">
+          {{ post.content | strip_html | truncate: 40 }}
+        </a>
+      </li>
+      {% endif %}
+      {% endfor %}
+  </div>
+  </ul>
+  {% if shortnonempty != 1 %}
+  <p style="text-align: center">No posts found.</p>
+  {% endif %}
+  </div>
+<br>
+<div class=over>
+  <p>Long Posts:</p>
+  <ul>
+      <div class="split left" style="font-weight: bold;">
+      {% for post in site.categories.long %}
+      {% if post.tags contains page.tag %}
+          <li>
+            {{ post.type }}
+          </li>
+          {% assign longnonempty = 1 %}
+      {% endif %}
+      {% endfor %}
+    </div>
+    <div class="split right">
+      {% for post in site.categories.long %}
+      {% if post.tags contains page.tag %}
+          <li>
+            <a href="{{site.baseurl}}{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </li>
+      {% endif %}
+      {% endfor %}
+      </div>
+  </ul>
+  {% if longnonempty != 1 %}
+  <p style="text-align: center">No posts found.</p>
+  {% endif %}
+</div>
