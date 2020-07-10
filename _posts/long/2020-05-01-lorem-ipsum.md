@@ -4,7 +4,7 @@ title:  "Perfect Blue (1997)"
 date:   2020-05-01 23:22:40
 categories: long
 type: review
-tags: [movie, review]
+tags: movie review
 ---
 
 Here is a long post. This long post is a dummy file for an imagined "movie review".

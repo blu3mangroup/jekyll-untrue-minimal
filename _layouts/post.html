@@ -9,11 +9,13 @@ layout: default
 {{ page.title }}<br>
 {{ page.date | date: "%D" }}<br>
 Type: {{ page.type }}<br>
-Tags: {% for tag in page.tags %} #{{ tag }} {% endfor %}
 {% else %}
 {{ page.date | date: "%T - %D" }}<br>
-Tags: {% for tag in page.tags %} #{{ tag }} {% endfor %}
 {% endif %}
+Tags: {% for tag in page.tags %}
+{% capture tag_name %}{{ tag }}{% endcapture %}
+<a href="{{site.baseurl}}/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>#{{ tag_name }}</nobr></code>&nbsp;</a>
+{% endfor %}
 </p>
 
 <br>

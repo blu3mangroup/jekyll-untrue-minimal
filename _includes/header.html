@@ -1,3 +1,9 @@
+<head>
+  {% if site.tags != "" %}
+  {% include collecttags.html %}
+{% endif %}
+</head>
+
 <header>
     <div style="max-width: 1800; margin-left: 10px;">{{ site.description }}</div>
 </header>
@@ -37,10 +43,15 @@
 <span style="float:right">
 {% for item in site.data.headerExtra %}
     {% if current_sub == item.link %}
-        <a class="currentHeader">
+        <a href="{{site.baseurl}}/{{ item.link }}" class="currentHeader">
           {{ item.name | strip }}
         </a>
             &nbsp;&nbsp;
+    {% elsif current_sub == "tag" %}
+            <a href="{{site.baseurl}}/{{ item.link }}" class="currentHeader">
+              {{ item.name | strip }}
+            </a>
+                &nbsp;&nbsp;
     {% else %}
        <a href="{{site.baseurl}}/{{ item.link }}" class="linkHeader">
          {{ item.name }}
