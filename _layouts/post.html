@@ -4,23 +4,29 @@ layout: default
 
 <div class="overpost">
 
-<p style="font-weight: bold; text-align: right">
+<p style="text-align: right">
 {% if page.categories contains "long" %}
-{{ page.title }}<br>
-{{ page.date | date: "%D" }}<br>
-Type: {{ page.type }}<br>
+<b>{{ page.title }}</b><br>
+{{ page.date | date: "%F" }}<br>
+<b>Type:</b> {{ page.type }}<br>
 {% else %}
-{{ page.date | date: "%T - %D" }}<br>
+{{ page.date | date: "%F" }}<br>
 {% endif %}
-Tags: {% for tag in page.tags %}
+<br>
+
+<b>Tags:</b> {% for tag in page.tags %}
 {% capture tag_name %}{{ tag }}{% endcapture %}
-<a href="{{site.baseurl}}/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>#{{ tag_name }}</nobr></code>&nbsp;</a>
+<a href="{{site.baseurl}}/tag/{{ tag_name }}"><nobr>&nbsp;#{{ tag_name }}</nobr></a>
 {% endfor %}
 </p>
 
 <br>
-
 {{ content }}
-
+<br>
 
 </div>
+
+<br>
+&nbsp;
+<b>
+&nbsp;
