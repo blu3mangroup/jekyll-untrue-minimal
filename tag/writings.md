@@ -1,6 +1,6 @@
 ---
 layout: tagpage
-title: "Tag: music"
-tag: music
+title: "Tag: writings"
+tag: writings
 robots: noindex
 ---

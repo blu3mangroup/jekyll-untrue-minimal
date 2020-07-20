@@ -4,16 +4,14 @@ title:  "Perfect Blue (1997)"
 date:   2020-05-01 23:22:40
 categories: long
 type: review
-tags: movie review
+tags: movie review writings
 ---
 
-Here is a long post. This long post is a dummy file for an imagined "movie review".
+A simple example of something that might be categorized as a "long post" is a "movie review". Here is a "movie review".
 
 {:refdef: style="text-align: center;"}
 ![Still shot from the movie.](/jekyll-untrue-minimal/assets/img/PerfectBlue.jpg)
 {: refdef}
-
-The movie still was compressed using [Caesium](https://saerasoft.com/caesium/).
 
 Phasellus ut tortor sit amet mauris suscipit molestie dapibus ac eros.
 Mauris vehicula dui eget ante finibus malesuada.
