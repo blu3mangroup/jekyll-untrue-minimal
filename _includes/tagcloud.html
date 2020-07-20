@@ -1,16 +1,15 @@
-{% capture temptags %}
-  {% for tag in site.tags %}
-    {{ tag[1].size | plus: 1000 }}#{{ tag[0] }}#{{ tag[1].size }}
-  {% endfor %}
+{% capture tags %}
+{% for tag in site.tags %}
+{{ tag[0] }}#{{ tag[1].size}}
+{% endfor %}
 {% endcapture %}
-{% assign sortedtemptags = temptags | split:' ' | sort %}
+{% assign sortedtags = tags | split:' ' | sort %}
 
 <div class="split right">
 <ul class="tagpage">
-{% for temptag in sortedtemptags %}
-  {% assign tagitems = temptag | split: '#' %}
-  {% capture tagname %}{{ tagitems[1] }}{% endcapture %}
-  <li><a href="{{ site.baseurl }}/tag/{{ tagname }}">#{{ tagname }}</a></li>
+  {% for tag in sortedtags %}
+                    {% assign tagitems = tag | split: '#' %}
+  <li><a href="{{ site.baseurl }}/tag/{{ tagitems[0] }}">#{{ tagitems[0] }}</a></li>
   <br>
 {% endfor %}
 </ul>
