@@ -2,7 +2,10 @@ PATH
   remote: .
   specs:
     jekyll-untrue-minimal (0.1)
-      jekyll (>= 3.5, < 5.0)
+      jekyll-seo-tag
+      jekyll-sitemap
+      tzinfo (~> 2.0)
+      tzinfo-data (~> 1.2020)
 
 GEM
   remote: https://rubygems.org/
@@ -74,6 +77,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  jekyll
   jekyll-seo-tag
   jekyll-sitemap
   jekyll-untrue-minimal!
